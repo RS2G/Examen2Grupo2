@@ -5,13 +5,18 @@ BEGIN
 	SET NOCOUNT ON
 
 	SELECT
-		C.IdCliente
-		,E.IdServicio
+		S.IdSolicitud
 		,S.Cantidad
 		,S.Monto
 		,S.FechaEntrega
 		,S.UsuarioEntrega
 		,S.Observaciones
+		,C.IdCliente
+		,C.Nombre
+		,C.PrimerApellido
+		,C.SegundoApellido
+		,E.IdServicio
+		,E.NombreServicio
 
 
 	FROM
