@@ -22,6 +22,6 @@ namespace Entity
         public string NombreApellidosMadre { get; set; }
         public string Pasaporte { get; set; }
         public string CuentaIBAN { get; set; }
-        public string Correo { get; set; }
+        public string CorreoNotifica { get; set; }
     }
 }
