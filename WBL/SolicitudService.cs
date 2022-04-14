@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace WBL
 {
-    public interface IContactoService
+    public interface ISolicitudService
     {
         Task<DBEntity> Create(SolicitudEntity entity);
         Task<DBEntity> Delete(SolicitudEntity entity);

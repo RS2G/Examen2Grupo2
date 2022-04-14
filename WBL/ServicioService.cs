@@ -16,6 +16,7 @@ namespace WBL
         Task<IEnumerable<ServicioEntity>> GetLista();
         Task<ServicioEntity> GetById(ServicioEntity entity);
         Task<DBEntity> Update(ServicioEntity entity);
+
     }
 
 

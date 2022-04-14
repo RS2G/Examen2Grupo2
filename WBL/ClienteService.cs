@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace WBL
 {
 
-    public interface IClienteService
+    public interface IClienteService 
     {
         Task<DBEntity> Create(ClienteEntity entity);
         Task<DBEntity> Delete(ClienteEntity entity);
