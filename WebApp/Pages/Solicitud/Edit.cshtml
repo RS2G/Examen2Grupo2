@@ -1,0 +1,73 @@
+﻿@page
+@model WebApp.Pages.Solicitud.EditModel
+@{
+}
+<div id="AppEdit" class="container" data-entity="@JsonSerializer.Serialize(Model.Entity)" v-cloak>
+    <div class="card">
+        <div class="card-header">
+            @(Model.id.HasValue?"Actualizar":"Nuevo")
+        </div>
+        <div class="card-body">
+            <form id="FormEdit" method="post">
+                <input type="hidden" asp-for="Entity.IdSolicitud" />
+
+                <div class="form-group mb-3">
+                    <label for="Entity.IdCliente" class="form-label">Cliente</label>
+                    <select class="form-select" asp-for="Entity.IdCliente" v-model="Entity.IdCliente"
+                            asp-items="@(new SelectList(Model.ClienteLista, "IdCliente", "Nombre"))" required>
+                    </select>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Entity.IdServicio" class="form-label">Servicio</label>
+                    <select class="form-select" asp-for="Entity.IdServicio" v-model="Entity.IdServicio"
+                            asp-items="@(new SelectList(Model.ServicioLista, "IdServicio", "Nombre"))" required>
+                    </select>
+                </div>
+
+
+                <div class="form-group mb-3">
+                    <label for="Entity.Cantidad" class="form-label">Cantidad</label>
+                    <input type="text" class="form-control" asp-for="Entity.Cantidad" v-model="Entity.Cantidad" maxlength="250" required>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Entity.Monto" class="form-label">Monto</label>
+                    <input type="text" class="form-control" asp-for="Entity.Monto" v-model="Entity.Monto" maxlength="250" required>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Entity.FechaEntrega" class="form-label">Fecha de entrega</label>
+                    <input type="text" class="form-control" asp-for="Entity.FechaEntrega" v-model="Entity.FechaEntrega" maxlength="250" required>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Entity.UsuarioEntrega" class="form-label">Usuario Entrega</label>
+                    <input type="text" class="form-control" asp-for="Entity.UsuarioEntrega" v-model="Entity.UsuarioEntrega" maxlength="250" required>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="Entity.Observaciones" class="form-label">Observaciones</label>
+                    <input type="text" class="form-control" asp-for="Entity.Observaciones" v-model="Entity.Observaciones" maxlength="250" required>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-4">
+                        <button type="button" @@click="Save" class="btn btn-primary">
+                            @(Model.id.HasValue?"Actualizar":"Agregar")
+                        </button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    .
+</div>
+
+@section Scripts{
+
+    <script src="~/App/Solicitud/Edit.js"></script>
+
+}
