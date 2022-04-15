@@ -29,8 +29,8 @@ namespace WebApp.Pages.Solicitud
         [FromBody]
         public SolicitudEntity Entity {get; set;} = new SolicitudEntity();
 
-        public IEnumerable<ClienteEntity> ClienteLista { get; set; } = new List<ClienteEntity>();
-        public IEnumerable<ServicioEntity> ServicioLista { get; set; } = new List<ServicioEntity>();
+        public IEnumerable<ClienteEntity> ClienteListar { get; set; } = new List<ClienteEntity>();
+        public IEnumerable<ServicioEntity> ServicioListar { get; set; } = new List<ServicioEntity>();
 
         //Metodo OnGet
         public async Task<IActionResult> OnGet()
@@ -44,8 +44,8 @@ namespace WebApp.Pages.Solicitud
                         IdSolicitud = id
                     });
                 }
-                ClienteLista = await clienteService.GetLista();
-                ServicioLista = await servicioService.GetLista();
+                ClienteListar = await clienteService.GetLista();
+                ServicioListar = await servicioService.GetLista();
 
                 return Page();
             }

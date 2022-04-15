@@ -6,7 +6,7 @@
         ComfirmAlert("¿Eliminar la solicitud?", "Eliminar", "warning", '#3085d6', '#d33')
             .then(result => {
                 if (result.isConfirmed) {
-                    Loading.fire("Borrando");
+                    Loading.fire("Borrando...");
 
                     App.AxiosProvider.SolicitudEliminar(id).then(data => {
                         Loading.close();

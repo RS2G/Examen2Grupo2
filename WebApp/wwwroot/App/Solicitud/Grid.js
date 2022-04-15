@@ -1,15 +1,15 @@
 "use strict";
-var ServicioGrid;
-(function (ServicioGrid) {
+var SolicitudGrid;
+(function (SolicitudGrid) {
     function OnClickEliminar(id) {
-        ComfirmAlert("¿Eliminar el servicio?", "Eliminar", "warning", '#3085d6', '#d33')
+        ComfirmAlert("¿Eliminar la solicitud?", "Eliminar", "warning", '#3085d6', '#d33')
             .then(function (result) {
             if (result.isConfirmed) {
-                Loading.fire("Borrando");
-                App.AxiosProvider.ServicioEliminar(id).then(function (data) {
+                Loading.fire("Borrando...");
+                App.AxiosProvider.SolicitudEliminar(id).then(function (data) {
                     Loading.close();
                     if (data.CodeError == 0) {
-                        Toast.fire({ title: "El servicio se elimino correctamente", icon: "success" }).then(function () {
+                        Toast.fire({ title: "La solicitud se elimino correctamente", icon: "success" }).then(function () {
                             return window.location.reload();
                         });
                     }
@@ -20,7 +20,7 @@ var ServicioGrid;
             }
         });
     }
-    ServicioGrid.OnClickEliminar = OnClickEliminar;
+    SolicitudGrid.OnClickEliminar = OnClickEliminar;
     $("#GridView").DataTable();
-})(ServicioGrid || (ServicioGrid = {}));
+})(SolicitudGrid || (SolicitudGrid = {}));
 //# sourceMappingURL=Grid.js.map

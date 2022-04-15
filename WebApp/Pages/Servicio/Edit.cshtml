@@ -12,28 +12,23 @@
                 <input type="hidden" asp-for="Entity.IdServicio" />
 
                 <div class="form-group mb-3">
-                    <label for="Entity.IdServicio" class="form-label">Id</label>
-                    <input type="text" class="form-control" asp-for="Entity.IdServicio" v-model="Entity.IdServicio" maxlength="250" required>
-                </div>
-
-                <div class="form-group mb-3">
                     <label for="Entity.NombreServicio" class="form-label">Nombre del servicio</label>
-                    <input type="text" class="form-control" asp-for="Entity.NombreServicio" v-model="Entity.Monto" maxlength="250" required>
+                    <input type="text" class="form-control" asp-for="Entity.NombreServicio" v-model="Entity.NombreServicio" maxlength="250" required>
                 </div>
 
                 <div class="form-group mb-3">
                     <label for="Entity.PlazoEntrega" class="form-label">Plazo de entrega</label>
-                    <input type="text" class="form-control" asp-for="Entity.PlazoEntrega" v-model="Entity.PlazoEntrega" maxlength="250" required>
+                    <input type="number" class="form-control" asp-for="Entity.PlazoEntrega" v-model="Entity.PlazoEntrega" maxlength="250" required>
                 </div>
 
                 <div class="form-group mb-3">
                     <label for="Entity.CostoServicio" class="form-label">Costo del servicio</label>
-                    <input type="text" class="form-control" asp-for="Entity.CostoServicio" v-model="Entity.CostoServicio" maxlength="250" required>
+                    <input type="number" class="form-control" asp-for="Entity.CostoServicio" v-model="Entity.CostoServicio" maxlength="250" required>
                 </div>
 
                 <div class="form-group mb-3">
                     <label for="Entity.Estado" class="form-label">Estado</label>
-                    <input type="text" class="form-control" asp-for="Entity.Estado" v-model="Entity.Estado" maxlength="250" required>
+                    <input type="number" class="form-control" asp-for="Entity.Estado" v-model="Entity.Estado" maxlength="250" required>
                 </div>
 
                 <div class="form-group mb-3">
@@ -58,6 +53,6 @@
 
 @section Scripts{
 
-    <script src="~/App/Servicio/Edit.js"></script>
+    <script defer src="~/App/Servicio/Edit.js"></script>
 
 }

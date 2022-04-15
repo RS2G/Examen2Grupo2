@@ -8,7 +8,7 @@
                 if (result.isConfirmed) {
                     Loading.fire("Borrando");
 
-                    App.AxiosProvider.SolicitudEliminar(id).then(data => {
+                    App.AxiosProvider.ServicioEliminar(id).then(data => {
                         Loading.close();
 
                         if (data.CodeError == 0) {
