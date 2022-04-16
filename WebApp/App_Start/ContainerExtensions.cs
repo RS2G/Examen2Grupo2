@@ -20,7 +20,7 @@ namespace WebApp
            // services.AddTransient<IClienteService, ClienteService>();
 
             
-=======
+
 
             services.AddTransient<ISolicitudService, SolicitudService>();
             services.AddTransient<IServicioService, ServicioService>();
