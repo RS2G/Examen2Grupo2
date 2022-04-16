@@ -159,7 +159,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.QueryAsync<ClienteEntity>("dbo.ClienteLista");
+                var result = sql.QueryAsync<ClienteEntity>("dbo.ClienteListar");
                 return await result;
             }
             catch (Exception)

@@ -27,6 +27,7 @@ namespace WebApp
             services.AddDIContainer();
             services.AddRazorPages().AddJsonOptions(option =>
             {
+
                 option.JsonSerializerOptions.DictionaryKeyPolicy = null;
                 option.JsonSerializerOptions.PropertyNamingPolicy = null;
             }).AddRazorPagesOptions(options =>

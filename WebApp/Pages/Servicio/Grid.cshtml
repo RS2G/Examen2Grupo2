@@ -1,0 +1,62 @@
+﻿@page
+@model WebApp.Pages.Servicio.GridModel
+@{
+}
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            Servicios
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Servicios</h5>
+
+            <a class="btn btn-secondary" asp-page="Edit"><i class='bx bxs-add-to-queue'></i></a>
+
+            <div class="row">
+                <div class="col-12">
+                    <table id="GridView" class="table table-bordered table table-striped table table-hover">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre del servicio</th>
+                                <th>Plazo de entrega</th>
+                                <th>Costo del servicio</th>
+                                <th>Estado</th>
+                                <th>Cuenta contable</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.GridList)
+                            {
+                                <tr>
+                                    <td>@item.IdServicio</td>
+                                    <td>@item.NombreServicio</td>
+                                    <td>@item.PlazoEntrega</td>
+                                    <td>@item.CostoServicio</td>
+                                    <td>@item.Estado</td>
+                                    <td>@item.CuentaContable</td>
+
+
+                                    <td>
+                                        <a class="btn btn-secondary" asp-page="Edit" asp-route-id="@item.IdServicio"><i class='bx bx-edit'></i></a>
+                                        <button type="button" class="btn btn-secondary" onclick="ServicioGrid.OnClickEliminar(@item.IdServicio)"><i class='bx bx-trash'></i></button>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    .
+</div>
+
+@section Scripts{
+
+    <script defer src="~/App/Servicio/Grid.js"></script>
+
+}
+
