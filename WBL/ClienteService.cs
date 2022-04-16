@@ -103,9 +103,10 @@ namespace WBL
         {
             try
             {
-                var result = sql.ExecuteAsync("dbo.ClienteActualizar", new
+                var result = sql.ExecuteAsync("dbo.ClienteEditar", new
                 {
                     entity.IdCliente,
+                    entity.Identificacion,
                     entity.IdTipoIdentificacion,
                     entity.Nombre,
                     entity.PrimerApellido,

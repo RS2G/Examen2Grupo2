@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,12 +13,22 @@ namespace WebApp
 
         public static IServiceCollection AddDIContainer(this IServiceCollection services)
         {
-            services.AddSingleton<IDataAccess, DataAccess>();
-            services.AddTransient<ISolicitudService, SolicitudService>();
-            services.AddTransient<IServicioService, ServicioService>();
-            services.AddTransient<IClienteService, ClienteService>();
+
+            //services.AddSingleton<IDataAccess, DataAccess>();
+            //services.AddTransient<ISolicitudService, SolicitudService>();
+            //services.AddTransient<IServicioService, ServicioService>();
+           // services.AddTransient<IClienteService, ClienteService>();
 
             
+=======
+
+            services.AddTransient<ISolicitudService, SolicitudService>();
+            services.AddTransient<IServicioService, ServicioService>();
+            services.AddSingleton<IDataAccess, DataAccess>();
+            services.AddTransient<IClienteService, ClienteService>();
+
+
+
             return services;
         }
     }
