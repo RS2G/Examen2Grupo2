@@ -3,10 +3,10 @@
 	@IdCliente INT,
 	@IdServicio INT,
 	@Cantidad INT,
-	@Monto DECIMAL,
+	@Monto DECIMAL(18,2),
 	@FechaEntrega DATETIME,
-	@UsuarioEntrega VARCHAR,
-	@Observaciones VARCHAR
+	@UsuarioEntrega VARCHAR(50),
+	@Observaciones VARCHAR(250)
 AS
 BEGIN
 	SET NOCOUNT ON
