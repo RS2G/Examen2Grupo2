@@ -12,62 +12,65 @@
 
             <a class="btn btn-secondary" asp-page="Edit"><i class='bx bxs-add-to-queue'></i></a>
 
-            <div class="row">
-                <div class="col-12">
-                    <table id="GridView" class="table table-bordered table table-striped table table-hover">
-                        <thead>
-                            <tr>
-                                <th>ID</th>
-                                <th>Identificación</th>
-                                <th>Tipo Identificación</th>
-                                <th>Nombre</th>
-                                <th>Primer Apellido</th>
-                                <th>Segundo Apellido</th>
-                                <th>Nacimiento</th>
-                                <th>Nacionalidad</th>
-                                <th>Defunción</th>
-                                <th>Género</th>
-                                <th>Nombre Padre</th>
-                                <th>Nombre Madre</th>
-                                <th>Pasaporte</th>
-                                <th>Cuenta Iban</th>
-                                <th>Correo</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model.GridList)
-                            {
-                            <tr>
+            <div style="overflow:scroll;">
 
-                                <td>@item.IdCliente</td>
-                                <td>@item.Identificacion</td>
-                                <td>@item.IdTipoIdentificacion</td>
-                                <td>@item.Nombre</td>
-                                <td>@item.PrimerApellido</td>
-                                <td>@item.SegundoApellido</td>
-                                <td>@item.FechaNacimiento</td>
-                                <td>@item.Nacionalidad</td>
-                                <td>@item.FechaDefuncion</td>
-                                <td>@item.Genero</td>
-                                <td>@item.NombreApellidosPadre</td>
-                                <td>@item.NombreApellidosMadre</td>
-                                <td>@item.Pasaporte</td>
-                                <td>@item.CuentaIBAN</td>
-                                <td>@item.CorreoNotifica</td>
+                <div class="row">
+                    <div class="col-12">
+                        <table id="GridView" class="table table-bordered table table-striped table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Identificación</th>
+                                    <th>Tipo Identificación</th>
+                                    <th>Nombre</th>
+                                    <th>Primer Apellido</th>
+                                    <th>Segundo Apellido</th>
+                                    <th>Nacimiento</th>
+                                    <th>Nacionalidad</th>
+                                    <th>Defunción</th>
+                                    <th>Género</th>
+                                    <th>Nombre Padre</th>
+                                    <th>Nombre Madre</th>
+                                    <th>Pasaporte</th>
+                                    <th>Cuenta Iban</th>
+                                    <th>Correo</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.GridList)
+                                {
+                                    <tr>
 
-                                <td>
-                                    <a class="btn btn-secondary" asp-page="Edit" asp-route-id="@item.IdCliente"><i class='bx bx-edit'></i></a>
-                                    <button type="button" class="btn btn-secondary" onclick="ClienteGrid.OnClickEliminar(@item.IdCliente)"><i class='bx bx-trash'></i></button>
-                                </td>
-                            </tr>
-                            }
-                        </tbody>
-                    </table>
+                                        <td>@item.IdCliente</td>
+                                        <td>@item.Identificacion</td>
+                                        <td>@item.IdTipoIdentificacion</td>
+                                        <td>@item.Nombre</td>
+                                        <td>@item.PrimerApellido</td>
+                                        <td>@item.SegundoApellido</td>
+                                        <td>@item.FechaNacimiento</td>
+                                        <td>@item.Nacionalidad</td>
+                                        <td>@item.FechaDefuncion</td>
+                                        <td>@item.Genero</td>
+                                        <td>@item.NombreApellidosPadre</td>
+                                        <td>@item.NombreApellidosMadre</td>
+                                        <td>@item.Pasaporte</td>
+                                        <td>@item.CuentaIBAN</td>
+                                        <td>@item.CorreoNotifica</td>
 
+                                        <td>
+                                            <a class="btn btn-secondary" asp-page="Edit" asp-route-id="@item.IdCliente"><i class='bx bx-edit'></i></a>
+                                            <button type="button" class="btn btn-secondary" onclick="ClienteGrid.OnClickEliminar(@item.IdCliente)"><i class='bx bx-trash'></i></button>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    </div>
                 </div>
             </div>
+            </div>
         </div>
-    </div>
     .
 </div>
 
